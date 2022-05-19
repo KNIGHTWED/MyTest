@@ -9,6 +9,7 @@ int main() {
     // 문자열 끝을 알려주는 문자가 들어가기 때문이다
     char names[10] = "KimKimKim";
     // 한글은 1글자에 3바이트를 차지한다.(2바이트로 배웠는데 3바이트로 계산하면 맞는 이유는??)
+    // 한글은 기본 2바이트 + 공백 = 한글자 인 것 같다.
     char knames[7] = "정민";
     int input;
 
@@ -39,7 +40,7 @@ int main() {
         default:
             break;
     }
-    
+
 
     // input은 >>
     /*
