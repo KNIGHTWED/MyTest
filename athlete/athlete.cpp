@@ -1,32 +1,37 @@
 #include <iostream>
 #include <string>
 #include <vector>
-vector<string> participant = {"leo", "kiki", "eden"};
-vector<string> completion = {"eden", "kiki"};
+
 using namespace std;
 
-string solution(vector<string> participant, vector<string> completion);
-
 int main() {
+  string participant[] = {"milav", "stanko", "mislav", "ana"};
 
-  string answer = "";
+  string completion[] = {"stanko", "ana", "mislav"};
 
-  cout << "참가 : " << participant.size() << " 명" << endl;
-  cout << "완주 : " << completion.size() << " 명" << endl;
-  answer = solution(participant, completion);
+  int count[] ={0,};
 
-  cout << answer << endl;
-
-  return 0;
-}
-
-string solution(vector<string> participant, vector<string> completion) {
-  string answer = "";
-  for (int i = 0; i < participant.size(); i++)
+  for (int i = 0; i < 3; i++)
   {
-    /* code */
+    for (int j = 0; j < 4; j++)
+    {
+      if(participant[j] == completion[i]){
+        cout << "완주" << endl;
+        count[j]=1;
+
+      }
+    }
+    
   }
   
-
-  return answer;
+  for (int i = 0; i < 4; i++)
+  {
+    cout << count[i] << " ";
+    // if(count[i] == 0){
+    //   cout << "미완주 : " << participant[i] << endl;
+    // }
+  }
+  cout << endl;
+  
+  return 0;
 }
