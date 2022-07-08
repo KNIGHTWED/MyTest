@@ -1,3 +1,2 @@
-: solution(8, 1)){
-        cout << a << " ";
-    }
+
+    // cout << stoi(str) << endl;

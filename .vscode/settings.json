@@ -4,7 +4,8 @@
         "ostream": "cpp",
         "vector": "cpp",
         "iosfwd": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "string": "cpp"
     },
     "code-runner.executorMap": {
         "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
