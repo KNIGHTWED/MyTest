@@ -1,5 +1,7 @@
 cal.txt
 
-tasks.json
-launch.json
+.vscode/
 
+athlete/*.exec
+bakjoon/*.exec
+/iotest/*.exec

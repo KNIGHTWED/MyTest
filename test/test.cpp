@@ -4,40 +4,47 @@
 #include <algorithm>
 
 using namespace std;
-// int solution(int a);
+string solution(vector<int> numbers);
+bool compare(string a, string b);
 
-// 첫재 줄에 정수 N(0 <= N <= 12) 이 주어진다. N!을 출력
 int main() {
-    vector<string> v1 {"abcd"};
-    vector<int> v2(5,10);
-    vector<int> v3(v2);
+    vector<int> q1 = {6, 10, 2};
+    vector<int> q2 = {3, 30, 34, 5, 9};
+    string answer = "";
 
-    // vector.at(int) 느리다, 안전하다 (범위점검)
-    cout << "v1.at(1) = " << v1.at(1) << "\n";
+    answer = solution(q1);
+    cout << "1번 예제: " << answer << "\n";
 
-    // vector[int] 빠르다(범위점검 안함)
-    cout << "v1[2] = " << v1[2] << "\n";
-
-    // vector.front(), vector.back()
-    cout << "v1.front() = " << v1.front() << ", v1.backt() = " << v1.back() << "\n";
-
-    // v.clear() 벡터의 모든 원소 제거(size만 줄고 capacity는 남아있다.
-    v1.clear();
-    cout << "v1.clear();\n";
-    
-    // v.push_back()
-    v1.push_back("z");
-    cout << "v1.push_back(""z""); clear 후 첫번째 삽입 요소 = " << v1.front() << "\n";
-    // cout << "벡터 v1의 3번째 요소 = " << v1.at(3) << "\n";
-    // cout << "벡터 v1의 3번째 요소 = " << v1.at(3) << "\n";
-    // cout << "벡터 v1의 3번째 요소 = " << v1.at(3) << "\n";
-    // cout << "벡터 v1의 3번째 요소 = " << v1.at(3) << "\n";
-    // cout << "벡터 v1의 3번째 요소 = " << v1.at(3) << "\n";
-    
+    answer = solution(q2);
+    cout << "2번 예제: " << answer << endl;
     return 0;
 }
 
-// int solution(int a){
-//     if(a <= 1) return 1;
-//     return a * solution(a - 1);
-// }
+string solution(vector<int> numbers){
+    string answer = "";
+    vector<string> tmp;
+
+    for(auto num : numbers){
+        tmp.push_back(to_string(num));
+    }
+
+    sort(tmp.begin(), tmp.end(), compare);
+
+    if(tmp.at(0) == "0"){
+        return "0";
+    }
+
+    for(auto num : tmp){
+        answer += num;
+    }
+    return answer;
+}
+
+bool compare(string a, string b) {
+    if(a+b > b+a){
+        cout << a << " + " << b << " > " << b << " + " << a << "\n";
+    } else {
+        cout << a << " + " << b << " < " << b << " + " << a << "\n";
+    }
+    return a + b > b + a;
+}
