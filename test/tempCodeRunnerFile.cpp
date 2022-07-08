@@ -1,4 +1,3 @@
-
-//     if(a <= 1) return 1;
-//     return a * solution(a - 1);
-// }
+: solution(8, 1)){
+        cout << a << " ";
+    }

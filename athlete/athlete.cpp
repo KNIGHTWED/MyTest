@@ -4,9 +4,12 @@
 #include <algorithm>
 
 using namespace std;
-
+string solution(vector<string> participant, vector<string> completion);
 int main() {
-  int c = 10;
+  vector<string> participant = {"mislav", "stanko", "mislav", "ana"};
+  vector<string> compleiton = {"stanko", "ana", "mislav"};
+
+  cout << solution(participant, compleiton);
 
   return 0;
 }
